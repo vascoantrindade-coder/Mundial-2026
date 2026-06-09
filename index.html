@@ -116,7 +116,7 @@ img{display:inline-block;vertical-align:middle}
 .btn-out:hover{background:rgba(255,255,255,.1)}
 
 .banner-strip{width:100%;height:80px;flex-shrink:0;background:var(--bg2);padding:0 1rem;display:flex;align-items:center;justify-content:center}
-.banner-strip img{height:100%;max-width:100%;object-fit:contain;display:block}
+.banner-strip span{font-size:64px}
 
 .rg-summary{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:.75rem .9rem;display:flex;flex-wrap:wrap;gap:.6rem .4rem;margin-bottom:.9rem;align-items:center}
 .rg-stat{display:flex;align-items:center;gap:.4rem;flex-shrink:0}
@@ -129,7 +129,6 @@ img{display:inline-block;vertical-align:middle}
 .rg-section-hdr{display:flex;align-items:center;gap:.5rem;margin-bottom:.65rem}
 .rg-section-hdr .rg-ico{font-size:18px;flex-shrink:0}
 .rg-section-hdr h2{font-family:'Bebas Neue',sans-serif;font-size:17px;letter-spacing:.06em;line-height:1.1}
-.rg-section-hdr h2 span{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.04em;font-family:'Barlow',sans-serif;display:block;margin-top:1px}
 
 .rk-tbl-wrap{border-radius:var(--r);border:1px solid var(--border);overflow:hidden}
 .rk-tbl{width:100%;border-collapse:collapse;font-size:12px}
@@ -137,10 +136,8 @@ img{display:inline-block;vertical-align:middle}
 .rk-tbl th{padding:.45rem .28rem;text-align:center;border-bottom:1px solid var(--border);font-weight:700}
 .rk-tbl td{padding:.45rem .28rem;text-align:center;background:var(--card);border-bottom:1px solid var(--border)}
 .rk-tbl tr:nth-child(even) td{background:rgba(255,255,255,.018)}
-.rk-pos{font-family:'Bebas Neue',sans-serif;font-size:17px;color:var(--muted);width:24px;text-align:center}
 .rk-pos.g{color:var(--gold)}
 .rk-nm{font-size:12.5px;font-weight:700;text-align:left;color:var(--text)}
-.rk-v-ex{color:var(--g2);font-size:13px;font-weight:700}
 .rk-v-tot{color:var(--g3);font-size:16px;font-weight:800}
 
 .screen{max-width:900px;margin-left:auto;margin-right:auto}
@@ -181,22 +178,22 @@ img{display:inline-block;vertical-align:middle}
 <!-- TELA 1 — PALPITES -->
 <div id="screen-palpites" class="screen">
   <div class="hdr"><div class="hdr-l"><div class="ey">Bolão Copa 2026</div><h1>Palpites</h1></div><div style="display:flex;align-items:center"><span class="theme-switch" onclick="toggleTheme()"><span class="sw-track"><span class="sw-thumb"></span></span></span><button class="btn-out" onclick="logout()">Sair</button></div></div>
-  <div class="banner-strip"><span style="font-size:64px">⚽</span></div>
+  <div class="banner-strip"><span>⚽</span></div>
   <div class="sb">
     <p class="sl">Jogos da Copa</p>
     <div id="jlista"></div>
   </div>
   <nav class="bnav">
     <button class="nb on" onclick="goTab('palpites',this)"><span class="ni">⚽</span>Palpites</button>
-    <button class="nb"    onclick="goTab('ranking',this)"><span class="ni">🏅</span>Ranking</button>
-    <button class="nb"    onclick="goTab('regras',this)"><span class="ni">📖</span>Regras</button>
+    <button class="nb" onclick="goTab('ranking',this)"><span class="ni">🏅</span>Ranking</button>
+    <button class="nb" onclick="goTab('regras',this)"><span class="ni">📖</span>Regras</button>
   </nav>
 </div>
 
 <!-- TELA 2 — RANKING -->
 <div id="screen-ranking" class="screen">
   <div class="hdr"><div class="hdr-l"><div class="ey">Bolão Copa 2026</div><h1>Ranking</h1></div><div style="display:flex;align-items:center"><span class="theme-switch" onclick="toggleTheme()"><span class="sw-track"><span class="sw-thumb"></span></span></span><button class="btn-out" onclick="logout()">Sair</button></div></div>
-  <div class="banner-strip"><span style="font-size:64px">🏅</span></div>
+  <div class="banner-strip"><span>🏅</span></div>
   <div class="sb">
     <div class="rk-tbl-wrap">
       <table class="rk-tbl">
@@ -206,16 +203,16 @@ img{display:inline-block;vertical-align:middle}
     </div>
   </div>
   <nav class="bnav">
-    <button class="nb"    onclick="goTab('palpites',this)"><span class="ni">⚽</span>Palpites</button>
+    <button class="nb" onclick="goTab('palpites',this)"><span class="ni">⚽</span>Palpites</button>
     <button class="nb on" onclick="goTab('ranking',this)"><span class="ni">🏅</span>Ranking</button>
-    <button class="nb"    onclick="goTab('regras',this)"><span class="ni">📖</span>Regras</button>
+    <button class="nb" onclick="goTab('regras',this)"><span class="ni">📖</span>Regras</button>
   </nav>
 </div>
 
 <!-- TELA 3 — REGRAS -->
 <div id="screen-regras" class="screen">
   <div class="hdr"><div class="hdr-l"><div class="ey">Bolão Copa 2026</div><h1>Regras</h1></div><div style="display:flex;align-items:center"><span class="theme-switch" onclick="toggleTheme()"><span class="sw-track"><span class="sw-thumb"></span></span></span><button class="btn-out" onclick="logout()">Sair</button></div></div>
-  <div class="banner-strip"><span style="font-size:64px">📖</span></div>
+  <div class="banner-strip"><span>📖</span></div>
   <div class="sb">
     <div class="rg-summary">
       <div class="rg-stat"><span class="rs-ico">🎯</span><div><div class="rs-val">5 pts</div><div class="rs-lbl">Placar exato</div></div></div>
@@ -248,8 +245,8 @@ img{display:inline-block;vertical-align:middle}
     </div>
   </div>
   <nav class="bnav">
-    <button class="nb"    onclick="goTab('palpites',this)"><span class="ni">⚽</span>Palpites</button>
-    <button class="nb"    onclick="goTab('ranking',this)"><span class="ni">🏅</span>Ranking</button>
+    <button class="nb" onclick="goTab('palpites',this)"><span class="ni">⚽</span>Palpites</button>
+    <button class="nb" onclick="goTab('ranking',this)"><span class="ni">🏅</span>Ranking</button>
     <button class="nb on" onclick="goTab('regras',this)"><span class="ni">📖</span>Regras</button>
   </nav>
 </div>
@@ -262,7 +259,7 @@ let games = [];
 let bets = {};
 
 // INICIALIZAÇÃO
-if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
+if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
 loadFromStorage();
 initApp();
 
@@ -278,7 +275,13 @@ function authTab(tab) {
   document.querySelectorAll('.apanel').forEach(p => p.classList.remove('on'));
   document.querySelectorAll('.atab').forEach(t => t.classList.remove('on'));
   document.getElementById('pan-' + tab).classList.add('on');
-  event.target.closest('.atab').classList.add('on');
+  event.target.classList.add('on');
+  clearAuthErrors();
+}
+
+function clearAuthErrors() {
+  document.getElementById('lerr').textContent = '';
+  document.getElementById('cerr').textContent = '';
 }
 
 function doLogin() {
@@ -298,6 +301,7 @@ function doLogin() {
   
   currentUser = user;
   saveToStorage();
+  clearAuthErrors();
   showScreen('palpites');
 }
 
@@ -306,8 +310,15 @@ function doCadastro() {
   const email = document.getElementById('ce').value.trim();
   const token = document.getElementById('ct').value.trim();
   
+  document.getElementById('cerr').textContent = '';
+  
   if(!name || !email || !token) {
     document.getElementById('cerr').textContent = 'Preencha todos os campos';
+    return;
+  }
+  
+  if(!email.includes('@')) {
+    document.getElementById('cerr').textContent = 'E-mail inválido';
     return;
   }
   
@@ -319,19 +330,29 @@ function doCadastro() {
   const newUser = { id: Date.now(), name, email, token, createdAt: new Date().toISOString(), points: 0 };
   allUsers.push(newUser);
   currentUser = newUser;
-  saveToStorage();
-  showScreen('palpites');
-}
-
-function logout() {
-  currentUser = null;
-  saveToStorage();
-  document.getElementById('le').value = '';
-  document.getElementById('lt').value = '';
+  
+  // Limpar inputs
   document.getElementById('cn').value = '';
   document.getElementById('ce').value = '';
   document.getElementById('ct').value = '';
-  showScreen('auth');
+  
+  saveToStorage();
+  showToast('Conta criada! Bem-vindo ao bolão! 🎉');
+  setTimeout(() => showScreen('palpites'), 1000);
+}
+
+function logout() {
+  if(confirm('Tem certeza que quer sair?')) {
+    currentUser = null;
+    saveToStorage();
+    document.getElementById('le').value = '';
+    document.getElementById('lt').value = '';
+    document.getElementById('cn').value = '';
+    document.getElementById('ce').value = '';
+    document.getElementById('ct').value = '';
+    clearAuthErrors();
+    showScreen('auth');
+  }
 }
 
 // NAVIGATION
@@ -358,33 +379,38 @@ function renderGames() {
     return;
   }
   
-  container.innerHTML = games.map((g, i) => `
-    <div class="card" style="margin-bottom:0.75rem">
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.5rem;align-items:center">
-        <div style="text-align:center">
-          <div style="font-size:10px;color:var(--muted);margin-bottom:0.25rem">${g.team1}</div>
-          <input type="number" min="0" max="9" style="width:100%;padding:0.5rem;border:1px solid var(--border);border-radius:var(--rsm);background:var(--card2);color:var(--text);text-align:center;font-size:18px;font-weight:700" value="${(bets[currentUser.id] && bets[currentUser.id][i] ? bets[currentUser.id][i].score1 : '')}" onchange="setBet(${i}, 0, this.value)">
+  container.innerHTML = games.map((g, i) => {
+    const bet = bets[currentUser?.id]?.[i];
+    return `
+      <div class="card" style="margin-bottom:0.75rem">
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.5rem;align-items:center">
+          <div style="text-align:center">
+            <div style="font-size:10px;color:var(--muted);margin-bottom:0.25rem">${g.team1}</div>
+            <input type="number" min="0" max="9" style="width:100%;padding:0.5rem;border:1px solid var(--border);border-radius:var(--rsm);background:var(--card2);color:var(--text);text-align:center;font-size:18px;font-weight:700" value="${bet?.score1 || ''}" onchange="setBet(${i}, 0, this.value)">
+          </div>
+          <div style="text-align:center;color:var(--muted)">vs</div>
+          <div style="text-align:center">
+            <div style="font-size:10px;color:var(--muted);margin-bottom:0.25rem">${g.team2}</div>
+            <input type="number" min="0" max="9" style="width:100%;padding:0.5rem;border:1px solid var(--border);border-radius:var(--rsm);background:var(--card2);color:var(--text);text-align:center;font-size:18px;font-weight:700" value="${bet?.score2 || ''}" onchange="setBet(${i}, 1, this.value)">
+          </div>
         </div>
-        <div style="text-align:center;color:var(--muted)">vs</div>
-        <div style="text-align:center">
-          <div style="font-size:10px;color:var(--muted);margin-bottom:0.25rem">${g.team2}</div>
-          <input type="number" min="0" max="9" style="width:100%;padding:0.5rem;border:1px solid var(--border);border-radius:var(--rsm);background:var(--card2);color:var(--text);text-align:center;font-size:18px;font-weight:700" value="${(bets[currentUser.id] && bets[currentUser.id][i] ? bets[currentUser.id][i].score2 : '')}" onchange="setBet(${i}, 1, this.value)">
-        </div>
+        <div style="margin-top:0.5rem;font-size:10px;color:var(--muted)">${new Date(g.date).toLocaleDateString('pt-BR')} ${new Date(g.date).toLocaleTimeString('pt-BR', {hour:'2-digit',minute:'2-digit'})}</div>
       </div>
-      <div style="margin-top:0.5rem;font-size:10px;color:var(--muted)">${new Date(g.date).toLocaleDateString('pt-BR')} ${new Date(g.date).toLocaleTimeString('pt-BR', {hour:'2-digit',minute:'2-digit'})}</div>
-    </div>
-  `).join('');
+    `;
+  }).join('');
 }
 
 function setBet(gameIndex, scoreIndex, value) {
+  if(!currentUser) return;
   if(!bets[currentUser.id]) bets[currentUser.id] = {};
   if(!bets[currentUser.id][gameIndex]) bets[currentUser.id][gameIndex] = { score1: 0, score2: 0 };
   
-  if(scoreIndex === 0) bets[currentUser.id][gameIndex].score1 = parseInt(value) || 0;
-  else bets[currentUser.id][gameIndex].score2 = parseInt(value) || 0;
+  const newValue = parseInt(value) || 0;
+  if(scoreIndex === 0) bets[currentUser.id][gameIndex].score1 = newValue;
+  else bets[currentUser.id][gameIndex].score2 = newValue;
   
   saveToStorage();
-  showToast('Palpite salvo! ✓');
+  showToast('Palpite salvo ✓');
 }
 
 // RANKING
@@ -394,8 +420,13 @@ function renderRanking() {
     totalPoints: calculateUserPoints(u.id)
   })).sort((a, b) => b.totalPoints - a.totalPoints);
   
+  if(scores.length === 0) {
+    document.getElementById('rlista').innerHTML = '<tr><td colspan="3" style="text-align:center;color:var(--muted);padding:2rem">Nenhum utilizador</td></tr>';
+    return;
+  }
+  
   const html = scores.map((u, i) => `
-    <tr ${u.id === currentUser.id ? "style='background:var(--glt)'" : ''}>
+    <tr ${u.id === currentUser?.id ? "style='background:var(--glt)'" : ''}>
       <td style="font-weight:700;color:var(--gold)">${i+1}</td>
       <td style="text-align:left"><strong>${u.name}</strong></td>
       <td><strong style="color:var(--g3);font-size:14px">${u.totalPoints}</strong></td>
@@ -427,15 +458,6 @@ function calculateUserPoints(userId) {
   return total;
 }
 
-// UTILITIES
-function showScreen(name) {
-  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-  document.getElementById('screen-' + name).classList.add('active');
-  
-  if(name === 'palpites') renderGames();
-  else if(name === 'ranking') renderRanking();
-}
-
 function toggleTheme() {
   const current = document.documentElement.getAttribute('data-theme') || 'dark';
   const newTheme = current === 'dark' ? 'light' : 'dark';
@@ -464,10 +486,16 @@ function saveToStorage() {
 }
 
 function loadFromStorage() {
-  currentUser = JSON.parse(localStorage.getItem('currentUser'));
-  allUsers = JSON.parse(localStorage.getItem('allUsers')) || [];
-  bets = JSON.parse(localStorage.getItem('bets')) || {};
-  games = JSON.parse(localStorage.getItem('games')) || initializeGames();
+  try {
+    currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    allUsers = JSON.parse(localStorage.getItem('allUsers')) || [];
+    bets = JSON.parse(localStorage.getItem('bets')) || {};
+    games = JSON.parse(localStorage.getItem('games')) || initializeGames();
+  } catch(e) {
+    allUsers = [];
+    bets = {};
+    games = initializeGames();
+  }
 }
 
 function initializeGames() {
